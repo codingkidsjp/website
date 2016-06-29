@@ -1,0 +1,41 @@
+@import url('../../../node_modules/sanitize.css/lib/sanitize.css');
+
+:root {
+  --root-font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Verdana', 'ＭＳ Ｐゴシック', 'MS PGothic', 'Arial', sans-serif;
+  --root-color: #555;
+  --root-font-size: 16px;
+  --root-line-height: 1.65;
+}
+
+html,
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+.main {
+  min-height: calc(100vh - 120px);
+}
+
+:global .fade-enter {
+  opacity: 0.01;
+}
+
+:global .fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+:global .fade-leave {
+  opacity: 1;
+}
+
+:global .fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

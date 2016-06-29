@@ -1,0 +1,252 @@
+@import url('../values.css');
+
+:root {
+  --mixin: '../mixin.css';
+}
+
+.section {
+  composes: section from var(--mixin);
+}
+
+.container {
+  composes: container from var(--mixin);
+}
+
+.content {
+  composes: content from var(--mixin);
+}
+
+.title {
+  composes: title from var(--mixin);
+}
+
+.control {
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 40px;
+}
+
+.input {
+  align-items: center;
+  background: white;
+  border: 1px solid #d3d6db;
+  border-radius: 3px;
+  color: var(--text-color);
+  display: inline-flex;
+  font-size: 14px;
+  height: 32px;
+  justify-content: flex-start;
+  line-height: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  vertical-align: top;
+  box-shadow: inset 0 1px 2px rgba(17, 17, 17, 0.1);
+  max-width: 100%;
+  width: 100%;
+
+  &:hover {
+    border-color: #aeb1b5;
+  }
+
+  &:active {
+    border-color: var(--main-color);
+    outline: none;
+  }
+
+  &:focus {
+    border-color: var(--main-color);
+    outline: none;
+  }
+
+}
+
+.inputError {
+  composes: input;
+  border-color: var(--error-color);
+}
+
+.textarea {
+  composes: input;
+  display: block;
+  line-height: 1.2;
+  max-height: 600px;
+  max-width: 100%;
+  min-height: 120px;
+  min-width: 100%;
+  padding: 10px;
+  resize: vertical;
+}
+
+.textareaError {
+  composes: textarea;
+  border-color: var(--error-color);
+}
+
+.select {
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  vertical-align: top;
+
+  & select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    align-items: center;
+    background: none white;
+    border: 1px solid #d3d6db;
+    border-radius: 3px;
+    color: var(--text-color);
+    display: inline-flex;
+    font-size: 14px;
+    height: 32px;
+    justify-content: flex-start;
+    line-height: 24px;
+    padding-left: 8px;
+    position: relative;
+    vertical-align: top;
+    cursor: pointer;
+    outline: none;
+    padding-right: 36px;
+    text-indent: 0.01px;
+    text-overflow: '';
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:hover {
+      border-color: #aeb1b5;
+    }
+
+    &:active,
+    &:focus {
+      border-color: var(--main-color);
+      outline: none;
+    }
+  }
+
+  &:after {
+    border: 1px solid var(--main-color);
+    border-right: 0;
+    border-top: 0;
+    content: ' ';
+    display: block;
+    height: 7px;
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 7px;
+    margin-top: -6px;
+    right: 16px;
+    top: 50%;
+  }
+
+  &:hover:after {
+    border-color: var(--text-color);
+  }
+}
+
+.selectError {
+  composes: select;
+  border-color: var(--error-color);
+}
+
+.button {
+  display: block;
+  position: relative;
+  margin: 10px auto;
+  padding: 5px 20px;
+  color: var(--text-color);
+  background-color: var(--ui-light-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  border-radius: 3px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &[data-sending='true'] {
+    color: transparent;
+    pointer-events: none;
+
+    &:after {
+      -webkit-animation: spin-around 500ms infinite linear;
+      animation: spin-around 500ms infinite linear;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: '';
+      display: block;
+      height: 16px;
+      width: 16px;
+
+      margin-left: -8px;
+      margin-top: -8px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+.buttonSubmit {
+  composes: button;
+  color: white;
+  background: linear-gradient(#f00, #d00);
+}
+
+.errorMsg {
+  display: block;
+  margin-top: 2px;
+  color: var(--error-color);
+  font-size: 0.7rem;
+}
+
+.errorBlock {
+  display: block;
+  color: var(--error-color);
+  font-size: 1rem;
+  border: var(--error-color) 1px solid;
+  border-radius: 3px;
+  background-color: color(var(--error-color) alpha(-80%));
+  padding: 1em 2em;
+  margin: 10px 0;
+}
+
+.successBlock {
+  display: block;
+  color: var(--success-color);
+  font-size: 0.9rem;
+  border: var(--success-color) 1px solid;
+  border-radius: 3px;
+  background-color: color(var(--success-color) alpha(-80%));
+  padding: 1em 2em;
+  margin: 10px 0;
+}
+
+.confirm {
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 1em auto;
+
+  & th {
+    text-align: right;
+    padding: 5px 10px;
+    border: var(--ui-light-color) 1px solid;
+  }
+
+  & td {
+    padding: 5px 10px;
+    border: var(--ui-light-color) 1px solid;
+  }
+}

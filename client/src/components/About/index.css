@@ -1,0 +1,42 @@
+@import url('../values.css');
+
+:root {
+  --mixin: '../mixin.css';
+}
+
+.section {
+  composes: section from var(--mixin);
+}
+
+.title {
+  composes: title from var(--mixin);
+  text-align: center;
+
+  & img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.content {
+  composes: content from var(--mixin);
+  margin-bottom: 5rem;
+
+  & h1 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: var(--main-color);
+  }
+
+  & p {
+    margin-bottom: 1em;
+  }
+
+  & figure {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "presets": ["es2015", "stage-1", "react"],
+  "plugins": [
+    "syntax-flow",
+    "transform-flow-strip-types",
+    "babel-plugin-syntax-jsx"
+  ],
+  "env": {
+    "production": {
+      "presets": ["es2015", "stage-1", "react", "react-optimize"]
+    }
+  }
+}

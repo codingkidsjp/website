@@ -1,0 +1,61 @@
+@import url('../values.css');
+
+.header {
+  background-image: svg-load('./assets/header-wave.svg');
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-size: 350px 40px;
+  width: 100%;
+
+  @media (--normal-viewport) {
+    background-size: 700px 80px;
+    height: 120px;
+  }
+
+}
+
+.logo {
+  text-align: center;
+  padding-top: 10px;
+
+  & img {
+    width: 130px;
+    height: 40px;
+  }
+
+  @media (--normal-viewport) {
+    padding-top: 20px;
+
+    & img {
+      width: 260px;
+      height: 80px;
+    }
+  }
+}
+
+.nav {
+  border-top: color(var(--nav-color) alpha(-50%)) 1px solid;
+  border-bottom: color(var(--nav-color) alpha(-50%)) 1px solid;
+  text-align: center;
+
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  & li {
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 10px;
+  }
+
+  & a {
+    color: var(--nav-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+  }
+}

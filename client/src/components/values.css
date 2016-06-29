@@ -1,0 +1,28 @@
+:root {
+  --main-color: #ff006f;
+  --text-color: #595757;
+  --nav-color: #1575e4;
+  --ui-light-color: #d3d6db;
+  --ui-dark-color: #aeb1b5;
+  --text-color-inverted: white;
+  --success-color: #00a9c9;
+  --error-color: #ed6c63;
+  --anim-duration: 0.3s;
+
+  --height-header: 60px;
+  --height-menu: 40px;
+  --height-submenu: 40px;
+  --height-header-small: 40px;
+}
+
+@custom-media --small-viewport (width < 720px);
+@custom-media --normal-viewport (width >= 720px);
+@custom-media --large-viewport (width > 1200px);
+@custom-selector :--active :hover, :focus, .active;
+
+@keyframes spin-around {
+
+  from { transform: rotate(0deg); }
+
+  to { transform: rotate(359deg); }
+}

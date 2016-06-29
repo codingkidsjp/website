@@ -1,0 +1,76 @@
+@import url('../values.css');
+
+.section {
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: 1024px 95px;
+  padding-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row-reverse;
+  max-width: 750px;
+  margin: auto;
+}
+
+.news {
+  flex-grow: 999999;
+  flex-basis: 300px;
+  margin: 10px;
+  font-size: 0.8rem;
+
+  @media (--normal-viewport) {
+    font-size: 1rem;
+  }
+
+  & h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.list {
+
+  & a {
+    display: block;
+    text-decoration: none;
+    color: var(--nav-color);
+    padding-left: 2px;
+
+    &:hover {
+      background-color: #f6f6f6;
+    }
+  }
+}
+
+.newsdate {
+  color: var(--main-color);
+  padding-right: 1em;
+}
+
+.banners {
+  flex-grow: 1;
+  flex-basis: 300px;
+  margin: 10px;
+
+  & ul {
+    list-style: none;
+  }
+
+  & li {
+    line-height: 0;
+    text-align: center;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & a {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+@import url('../values.css');
+
+.section {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 80px;
+
+  @media (--normal-viewport) {
+    background-size: 100% 200px;
+  }
+}
+
+.title {
+  max-width: 768px;
+  margin: 10px auto;
+  padding-top: 5px;
+  text-align: center;
+
+  @media (--normal-viewport) {
+    padding-top: 15px;
+  }
+
+  & img {
+    max-width: 380px;
+    width: 95%;
+
+    @media (--normal-viewport) {
+      max-width: 750px;
+    }
+  }
+}
+
+.content {
+  text-align: center;
+}
+
+.hr {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 46px 8px;
+  border: none;
+  margin: 10px 0;
+
+  @media (--normal-viewport) {
+    margin: 10px 0 20px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.features {
+  composes: row;
+  max-width: 380px;
+  margin: auto;
+
+  @media (--normal-viewport) {
+    max-width: 768px;
+  }
+
+  & h2 {
+    margin-top: 10px;
+
+    @media (--normal-viewport) {
+      margin-top: 30px;
+    }
+
+    & img {
+      height: 75px;
+      width: 100px;
+
+      @media (--normal-viewport) {
+        height: 90px;
+        width: 120px;
+      }
+    }
+  }
+
+  & p {
+    line-height: 1rem;
+    font-size: 0.7rem;
+    margin: 5px auto 10px;
+  }
+}
+
+.info {
+  composes: row;
+  max-width: 400px;
+  margin: auto;
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-size: 46px 8px;
+  line-height: 0;
+
+  @media (--normal-viewport) {
+    max-width: 768px;
+  }
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.course {
+  composes: col;
+  padding: 0 10px;
+  width: 300px;
+  margin: auto;
+
+  @media (--normal-viewport) {
+    flex: 2;
+    width: 66%;
+    height: 180px;
+  }
+}
+
+.place {
+  composes: col;
+  padding: 0 10px;
+  width: 300px;
+  margin: auto;
+
+  @media (--normal-viewport) {
+    flex: 1;
+    width: 33%;
+    height: 180px;
+  }
+}
+
+.nav {
+  max-width: 360px;
+  margin: 0 auto 2em;
+  padding: 10px;
+
+  @media (--normal-viewport) {
+    margin: 1em auto 3em;
+  }
+
+  & a {
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 75px;
+    background: linear-gradient(#f00, #d00);
+    border-radius: 10px;
+    border: #f8cbdf 2px solid;
+    text-align: center;
+
+    & img {
+      width: 90%;
+      max-width: 260px;
+    }
+  }
+}

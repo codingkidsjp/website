@@ -1,0 +1,66 @@
+@import url('../values.css');
+
+.section {
+  background-position: center top;
+  background-repeat: repeat-x;
+  background-size: 32px 145px;
+
+  @media (--normal-viewport) {
+    background-size: 64px 290px;
+  }
+}
+
+.title {
+  height: 145px;
+  line-height: 145px;
+  text-align: center;
+  overflow: hidden;
+
+  & img {
+    height: 65px;
+  }
+
+  @media (--normal-viewport) {
+    height: 290px;
+    line-height: 290px;
+
+    & img {
+      height: 130px;
+    }
+  }
+}
+
+.nav {
+  background-color: #ffebf4;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0 50px;
+}
+
+.btn {
+  display: block;
+  max-width: 360px;
+  width: 80%;
+  height: 80px;
+  line-height: 75px;
+  background: linear-gradient(#f00, #d00);
+  border-radius: 10px;
+  border: #f8cbdf 2px solid;
+  text-align: center;
+  margin: auto;
+
+  & img {
+    height: 44px;
+  }
+}
+
+.about {
+  display: block;
+  margin: 1em auto;
+  max-width: 240px;
+  width: 50%;
+
+  & img {
+    width: 100%;
+  }
+}

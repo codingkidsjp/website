@@ -1,0 +1,14 @@
+[ignore]
+node_modules/*
+[include]
+
+[libs]
+
+[options]
+esproposal.class_instance_fields=enable
+esproposal.class_static_fields=enable
+
+# webpack loaders
+# from https://gist.github.com/MoOx/12ac2bee8d876a5c1fe1593e4815895d
+module.name_mapper='.*\.css$' -> '<PROJECT_ROOT>/flow/stub_css-modules.js'
+module.name_mapper='.*\.\(txt\|md\|svg\|png\|jpg\|gif\)$' -> '<PROJECT_ROOT>/flow/stub_url-loader.js'
