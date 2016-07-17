@@ -15,8 +15,12 @@ const titles = [
     placeholder: '参加可能日、特に勉強したい内容等がありましたらご記入ください。'
   }, {
     key: 'event',
+    title: 'イベントへの参加お申し込み',
+    placeholder: 'ご希望の日程とお名前をご記入ください。'
+  }, {
+    key: 'scratch',
     title: 'スクラッチJr.体験会への参加お申し込み',
-    placeholder: 'ご希望の日程と参加人数をご記入ください。'
+    placeholder: 'ご希望の日程とお名前をご記入ください。'
   }, {
     key: 'about',
     title: '教室・体験会についてのご質問',
@@ -69,7 +73,7 @@ class ContactForm extends React.Component {
           {isSuccess ? (
             <div className={style.successBlock}>
               <h4>ありがとうございます</h4>
-              <p>内容を確認次第、ご連絡させていただきます。</p>
+              <p>お申し込み・お問い合わせを承りました。<br />内容を確認次第、ご連絡させていただきます。</p>
             </div>
           ) : isConfirm ? (
             <form onSubmit={handleSubmit(this.handleSubmit)}>
