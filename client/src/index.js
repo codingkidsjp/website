@@ -7,6 +7,9 @@ import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import ga from 'react-ga'
 
+import 'picturefill'
+import 'picturefill/dist/plugins/mutation/pf.mutation'
+
 import createStore from './store'
 import routes from './routes'
 

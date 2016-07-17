@@ -51,6 +51,7 @@
     "json-loader": "^0.5.4",
     "mocha": "^2.4.5",
     "moment": "^2.13.0",
+    "picturefill": "^3.0.2",
     "postcss-cssnext": "^2.5.2",
     "postcss-import": "^8.1.0",
     "postcss-inline-svg": "^2.0.1",
