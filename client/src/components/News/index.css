@@ -72,5 +72,9 @@
       display: block;
       cursor: pointer;
     }
+
+    & img {
+      width: 300px;
+    }
   }
 }
