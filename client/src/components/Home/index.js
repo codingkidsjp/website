@@ -15,6 +15,8 @@ class Home extends React.Component {
     if (this.props.location.hash) {
       const hash = this.props.location.hash.replace(/#/, '')
       Scroll.scroller.scrollTo(hash, {duration: 500, delay: 500, smooth: true})
+    } else {
+      Scroll.animateScroll.scrollToTop({duration: 0})
     }
   }
   render () {
