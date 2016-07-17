@@ -1,0 +1,86 @@
+doctype
+- var siteurl = 'http://codingkids.js'
+html(lang="ja" prefix="og: http://ogp.me/ns#")
+  head
+    link(rel="canonical" href="http://codingkids.jp")
+    meta(charset="utf-8")
+    title CodingKids
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    
+    //- Facebook META
+    meta(property="fb:app_id" content="{text:FacebookAppId}")
+    meta(property="og:site_name" content="{Title}")
+    meta(property="og:title" content="{Title}")
+    meta(property="og:description" content="{MetaDescription}")
+    meta(property="og:url" content="{BlogURL}")
+    meta(property="og:image" content="{image:ogp}")
+    meta(property="og:type" content="website")
+
+    //- Twitter META
+    meta(name="twitter:title" content="{Title}")
+    meta(name="twitter:description" content="{MetaDescription}")
+    meta(name="twitter:url" content="{BlogURL}")
+    meta(name="twitter:image" content="{image:ogp}")
+    
+    link(rel="shortcut icon" href=siteurl + "/favicon.ico")
+    link(rel="apple-touch-icon-precomposed" href="{PortraitURL-128}")
+    link(rel="alternate" type="application/rss+xml" href="{RSS}")
+    
+    link(rel="stylesheet" href=require("./index.css"))
+  body
+    #root
+      header.header
+        div.logo
+          a(href=siteurl)
+            img(src=require("../components/Header/logo-main.svg"))
+        ul.nav
+          li: a(href=siteurl + "/#school") プログラミング教室
+          li: a(href=siteurl + "/#event") スクラッチJr.体験会
+          li: a(href=siteurl + "/#phone") スマフォ相談会
+          li: a(href=siteurl + "/contact") お申し込み・お問い合わせ
+          li: a(href=siteurl + "/about") CodingKidsについて
+              
+      section.body
+        | {block:IndexPage}
+        h1.title ニュース一覧
+        div.content
+          ul
+            | {block:Posts}
+            | {block:Text}
+            li
+              a(href="{Permalink}")
+                span.date {block:Date}{MonthNumberWithZero}/{DayOfMonthWithZero}{/block:Date}
+                span.title {block:Title}{PlaintextTitle}{/block:Title}
+            | {/block:Text}
+            | {/block:Posts}
+            | {block:Pagination}{/block:Pagination}
+
+        | {/block:IndexPage}
+        | {block:PermalinkPage}
+        | {block:Posts}
+        article(class="post {PostType} {TagsAsClasses}")
+          | {block:Text}
+          | {block:Title}
+          h1.title
+            a(href="{Permalink}") {Title}
+          | {/block:Title}
+          | {block:Body}
+          div.content {Body}
+          | {/block:Body}
+          | {/block:Text}
+
+          | {block:Date}
+          section.panel
+            .date
+              a.meta-item(href="{Permalink}" title="{TimeAgo}")
+                | {ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}
+            .control
+              a.share-item(href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank")
+                i.icon-facebook-squared
+            .control
+              a.share-item(href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank")
+                i.icon-twitter-squared
+          | {/block:Date}
+        | {/block:Posts}
+        | {/block:PermalinkPage}
