@@ -22,7 +22,11 @@ class Post extends React.Component {
     return (
       <section className={style.section}>
         <Helmet title={data.title} />
-        {isLoading ? <div className={style.loader} /> : (
+        {isLoading ? (
+          <div>
+            <div className={style.loader} />
+          </div>
+        ) : (
           <div>
             <div className={style.breadcrumb}>
               <Link to="/"><img src={robo} /></Link>
