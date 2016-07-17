@@ -38,7 +38,13 @@
   }
 
   & img {
-    max-width: 720px;
+    max-width: 380px;
+    max-height: 20px;
+
+    @media (--normal-viewport) {
+      max-width: 740px;
+      max-height: 26px;
+    }
   }
 }
 
@@ -76,7 +82,6 @@
     text-align: center;
 
     & img {
-      width: 90%;
       max-width: 260px;
     }
   }

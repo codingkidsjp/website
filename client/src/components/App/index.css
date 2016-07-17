@@ -1,7 +1,7 @@
 @import url('../../../node_modules/sanitize.css/lib/sanitize.css');
 
 :root {
-  --root-font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Verdana', 'ＭＳ Ｐゴシック', 'MS PGothic', 'Arial', sans-serif;
+  --root-font-family: 'Avenir Next', Verdana, sans-serif;
   --root-color: #555;
   --root-font-size: 16px;
   --root-line-height: 1.65;
@@ -15,7 +15,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
-  font-weight: 300;
 }
 
 .main {

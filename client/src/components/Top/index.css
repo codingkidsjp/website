@@ -24,12 +24,17 @@
 }
 
 .lead {
-  margin: auto;
+  text-align: center;
 
   & img {
-    margin-top: -5vw;
+    margin-top: 2vw;
     height: 35vw;
-    width: 10vw;
+    width: 11vw;
+
+    @media (--normal-viewport) {
+      margin-top: 4vw;
+      height: 35vw;
+    }
   }
 }
 
