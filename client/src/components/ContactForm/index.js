@@ -65,7 +65,7 @@ class ContactForm extends React.Component {
     const {errorMsg, isConfirm, isSending, isSuccess} = this.props.contact
     return (
       <section className={style.section}>
-        <Helmet title="Contact" />
+        <Helmet title="お申し込み・お問い合わせ" />
         <h1 className={style.title}>
           お申し込み・お問い合わせ
         </h1>
