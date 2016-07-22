@@ -16,12 +16,21 @@ import bannerEventRetina from './assets/banner-event@2x.png'
 import bannerPhone from './assets/banner-phone.png'
 import bannerPhoneRetina from './assets/banner-phone@2x.png'
 
+import bannerHot from './assets/banner-event-2016sum.jpg'
+import bannerHotRetina from './assets/banner-event-2016sum@2x.jpg'
+
 const ScrollLink = Scroll.Link
 
 export default (props: Object) => {
   const {news} = props
   return (
     <section id="news" className={style.section} style={{backgroundImage: `url(${bg})`}}>
+      <div className={style.hotbanner}>
+        <Link to="/contact#event"><img
+          src={bannerHot}
+          srcSet={`${bannerHot} 1x, ${bannerHotRetina} 2x`}
+        /></Link>
+      </div>
       <div className={style.container}>
         <div className={style.banners}>
           <ul>
