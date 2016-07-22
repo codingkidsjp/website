@@ -22,6 +22,6 @@ export default () =>
       <div className={style.gallery} style={{backgroundImage: `url(${gallery})`}} />
     </div>
     <nav className={style.nav}>
-      <Link to="/contact#event"><img src={btn} /></Link>
+      <Link to="/contact#scratch"><img src={btn} /></Link>
     </nav>
   </section>

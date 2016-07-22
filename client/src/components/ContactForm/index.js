@@ -12,15 +12,44 @@ const titles = [
   {
     key: 'school',
     title: 'プログラミング教室への入会お申し込み',
-    placeholder: '参加可能日、特に勉強したい内容等がありましたらご記入ください。'
+    placeholder: '参加可能日、特に勉強したい内容等がありましたらご記入ください。',
+    info: `
+      <h3>プログラミング教室</h3>
+      <ul>
+        <li>時　間：9:30 〜 12:00（オープン制）</li>
+        <li>参加費：一回 3,000円 or 1月 10,000円</li>
+        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
+        <li>対　象：4歳から高校生（未就学児は要保護者同伴）</li>
+      </ul>
+    `
   }, {
     key: 'event',
     title: 'イベントへの参加お申し込み',
-    placeholder: 'ご希望の日程とお名前をご記入ください。'
+    placeholder: 'ご希望の日程とお名前をご記入ください。',
+    info: `
+      <h3>夏休み デジタル体験会</h3>
+      <ul>
+        <li>日　程：8月6日・8月20日</li>
+        <li>時　間：10:00 〜 12:00</li>
+        <li>参加費：1,000円</li>
+        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
+        <li>対　象：4歳から高校生（未就学児は要保護者同伴）</li>
+      </ul>
+    `
   }, {
     key: 'scratch',
     title: 'スクラッチJr.体験会への参加お申し込み',
-    placeholder: 'ご希望の日程とお名前をご記入ください。'
+    placeholder: 'ご希望の日程とお名前をご記入ください。',
+    info: `
+      <h3>スクラッチJr体験会</h3>
+      <ul>
+        <li>日　程：9月3日・10月8日</li>
+        <li>時　間：10:00 〜 12:00</li>
+        <li>参加費：3,000円</li>
+        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
+        <li>備　考：日程や場所は変更になる場合がありますので、ご確認ください</li>
+      </ul>
+    `
   }, {
     key: 'about',
     title: '教室・体験会についてのご質問',
@@ -134,6 +163,7 @@ class ContactForm extends React.Component {
                 />
                 {message.touched && message.error && <span className={style.errorMsg}>{message.error}</span>}
               </div>
+              <p className={style.info} dangerouslySetInnerHTML={{__html: title.value && titles[_.findIndex(titles, {title: title.value})].info}} />
               <div className={style.actions}>
                 <button className={style.buttonSubmit} type="submit"> 送信内容の確認 </button>
               </div>

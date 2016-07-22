@@ -250,3 +250,20 @@
     border: var(--ui-light-color) 1px solid;
   }
 }
+
+.info {
+  border: #ddd 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px auto;
+
+  & ul {
+    margin: 0;
+    list-style-position: inside;
+  }
+
+  & li {
+    padding: 0;
+    font-size: 0.8rem;
+  }
+}
