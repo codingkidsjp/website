@@ -26,10 +26,7 @@ export default (props: Object) => {
   return (
     <section id="news" className={style.section} style={{backgroundImage: `url(${bg})`}}>
       <div className={style.hotbanner}>
-        <Link to="/contact#event"><img
-          src={bannerHot}
-          srcSet={`${bannerHot} 1x, ${bannerHotRetina} 2x`}
-        /></Link>
+
       </div>
       <div className={style.container}>
         <div className={style.banners}>
