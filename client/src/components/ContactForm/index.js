@@ -15,26 +15,15 @@ const titles = [
     placeholder: '参加可能日、特に勉強したい内容等がありましたらご記入ください。',
     info: `
       <h3>プログラミング教室</h3>
-      <ul>
-        <li>時　間：9:30 〜 12:00（オープン制）</li>
-        <li>参加費：一回 3,000円 or 1月 10,000円</li>
-        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
-        <li>対　象：4歳から高校生（未就学児は要保護者同伴）</li>
-      </ul>
+      <p>現在は募集を行っておりません</p>
     `
   }, {
     key: 'event',
     title: 'イベントへの参加お申し込み',
     placeholder: 'ご希望の日程とお名前をご記入ください。',
     info: `
-      <h3>夏休み デジタル体験会</h3>
-      <ul>
-        <li>日　程：8月6日・8月20日</li>
-        <li>時　間：10:00 〜 12:00</li>
-        <li>参加費：1,000円</li>
-        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
-        <li>対　象：4歳から高校生（未就学児は要保護者同伴）</li>
-      </ul>
+      <h3>デジタル体験会</h3>
+      <p>現在は体験会の予定はありません</p>
     `
   }, {
     key: 'scratch',
@@ -42,13 +31,7 @@ const titles = [
     placeholder: 'ご希望の日程とお名前をご記入ください。',
     info: `
       <h3>スクラッチJr体験会</h3>
-      <ul>
-        <li>日　程：9月3日・10月8日</li>
-        <li>時　間：10:00 〜 12:00</li>
-        <li>参加費：3,000円</li>
-        <li>場　所：リージョンプラザ南館2階 第1研修室</li>
-        <li>備　考：日程や場所は変更になる場合がありますので、ご確認ください</li>
-      </ul>
+      <p>現在は体験会の予定はありません</p>
     `
   }, {
     key: 'about',
@@ -70,8 +53,12 @@ class ContactForm extends React.Component {
     let hash = this.props.location.hash ? this.props.location.hash.replace(/#/, '') : null
     if (this.props.location.pathname.match(/\/entry\/?/)) hash = 'event'
     if (this.props.location.pathname.match(/\/regist\/?/)) hash = 'school'
-    const data = hash ? {title: titles[_.findIndex(titles, {key: hash})].title} : {}
-    this.props.dispatch(Action.contactOpen(data))
+    if (hash) {
+      const index = _.findIndex(titles, {key: hash})
+      if (index > -1) {
+        this.props.dispatch(Action.contactOpen({title: titles[index].title}))
+      }
+    }
   }
   componentDidMount () {
     Scroll.animateScroll.scrollToTop({duration: 0})
